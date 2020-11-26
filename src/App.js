@@ -1,24 +1,22 @@
 import React from 'react';
-import Header from './components/Header';
-import FormComponent from './components/FormComponent';
-import EVM from './components/EVM';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+import ErrorPage from './components/ErrorPage';
+import { Switch, Route } from "react-router-dom";
 import './App.css';
 
 const App = () => {
     return (
         <>
-            <Router>
-                <Header />
-                <Switch>
-                    <Route path="/Auth/evm">
-                        <EVM />
-                    </Route>
-                    <Route path="/login">
-                        <FormComponent />
-                    </Route>
-                </Switch>
-            </Router>
+            <Navbar />
+            <Switch>
+                <Route exact path="/" component={() => <Home name='Vishwas' />} /> {/*But component is not preffered if you are sending some data from props because component re-renders the components again and again and sends the data again and again :(*/}
+                <Route exact path="/about" render={() => <About cName='ScalaX' />} /> {/*But render is preffered if you are sending some data from props because component re-renders the components again and again and sends the data again and again but render method does not change if the values are same it thinks if the values are same so why we re-render the whole thing :)*/}
+                <Route exact path="/contact" component={Contact} />
+                <Route path="*" component={ErrorPage} />
+            </Switch>
         </>
     );
 }
