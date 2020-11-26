@@ -10,7 +10,7 @@ import './App.css';
 const App = () => {
     return (
         <>
-            <Navbar />
+            <Navbar/>
             <Switch>
                 <Route exact path="/" component={() => <Home name='Vishwas' />} /> {/*But component is not preffered if you are sending some data from props because component re-renders the components again and again and sends the data again and again :(*/}
                 <Route exact path="/about" render={() => <About cName='ScalaX' />} /> {/*But render is preffered if you are sending some data from props because component re-renders the components again and again and sends the data again and again but render method does not change if the values are same it thinks if the values are same so why we re-render the whole thing :)*/}
