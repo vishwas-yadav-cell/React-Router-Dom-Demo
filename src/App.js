@@ -25,7 +25,7 @@ const App = () => {
                 </Route>
                 <Route path="*" component={ErrorPage} />
 
-                {/* <Redirect to="/" />  */} {/*this is use for redirect when the url couldn't found!*/}
+                {/* <Redirect to="/" />  */} {/*this is use for redirect!*/}
 
             </Switch>
         </>
