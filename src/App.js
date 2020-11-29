@@ -7,7 +7,7 @@ import User from './components/User';
 import ErrorPage from './components/ErrorPage';
 import Service from './components/Service';
 import Search from './components/Search';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import './App.css';
 
 const App = () => {
@@ -24,6 +24,9 @@ const App = () => {
                     <Service />
                 </Route>
                 <Route path="*" component={ErrorPage} />
+
+                {/* <Redirect to="/" />  */} {/*this is use for redirect when the url couldn't found!*/}
+
             </Switch>
         </>
     );
