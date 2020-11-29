@@ -1,0 +1,11 @@
+.searchDiv {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 20px auto;
+}
+
+.searchDiv > input {
+    width: 200px;
+    margin: 20px auto;
+}
